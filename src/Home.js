@@ -18,10 +18,8 @@ import {
 
 function Home({ match }) {
   const [templateState, addTemplateState] = useState(null);
-  const [loadingStore, setLoadingStore] = useState(false);
 
   useEffect(() => {
-    setLoadingStore(true);
     async function setData() {
       const template = await getTemplate();
       if (template) {
@@ -29,10 +27,7 @@ function Home({ match }) {
       }
     }
     setData();
-    setLoadingStore(false);
   }, []);
-
-  console.log(templateState, loadingStore);
 
   // if (!templateState || isEmpty(templateState)) return null;
   return (

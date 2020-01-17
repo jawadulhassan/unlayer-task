@@ -6,8 +6,6 @@ import { Input, Button, HeadingWrapper } from "./styles";
 import { addTemplate, editTemplate } from "./helpers/storage";
 
 function Template({ location = {} }) {
-  console.log("location:", location);
-
   const [templateName, setTemplateName] = useState(
     location.state ? location.state.name : null
   );
@@ -24,8 +22,6 @@ function Template({ location = {} }) {
   const editTemplateFunc = (id, template) => {
     editTemplate(id, template);
   };
-
-  console.log("templateName:", templateName);
 
   const handleFunc = location.state
     ? () => editTemplateFunc(location.state._id, templateName)
