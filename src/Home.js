@@ -34,7 +34,7 @@ function Home({ match }) {
 
   console.log(templateState, loadingStore);
 
-  if (!templateState || isEmpty(templateState)) return null;
+  // if (!templateState || isEmpty(templateState)) return null;
   return (
     <TemplateProvider
       value={{
